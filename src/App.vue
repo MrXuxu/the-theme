@@ -4,17 +4,25 @@
     <el-button type="primary">测试</el-button>
     <el-button type="primary">测试</el-button>
     <el-button type="primary" plain>测试</el-button>
+    <div :style="mainBg">背景</div>
+    <div :style="mainFont">测试文字</div>
   </div>
 </template>
 
 <script>
 import HelloWorld from './components/HelloWorld.vue'
 import ThemePicker from '@/components/ThemePicker'
-
+// import Theme from '@/mixin/theme.js'
 export default {
   name: 'app',
   components: {
     HelloWorld, ThemePicker
+  },
+  // mixins: [Theme],
+  computed: {
+    // mainTheme() {
+    //   return this.$store.state.settings.theme
+    // }
   },
   methods: {
     themeChange(val) {
@@ -23,6 +31,9 @@ export default {
         value: val
       })
     }
+  },
+  created() {
+    console.log(this.test);
   }
 }
 </script>

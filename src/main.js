@@ -5,6 +5,9 @@ import router from './router'
 // import store from './store'
 import store from '@/store/index'
 import './plugins/element.js'
+import Theme from '@/mixin/theme'
+
+Vue.mixin(Theme)
 
 Vue.config.productionTip = false
 
